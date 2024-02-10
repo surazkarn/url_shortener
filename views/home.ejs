@@ -91,9 +91,9 @@
 <body>
     <h1>URL Shortener</h1>
     <% if (locals.id) { %>
-        <p>URL Generated: <a href="http://jugaad.rocks:8000/url<%= id %>" target="_blank">http://jugaad.rocks:8000/url<%= id %></a></p>
+        <p>URL Generated: <a href="http://jugaad.rocks/url/<%= id %>" target="_blank">http://jugaad.rocks/url/<%= id %></a></p>
         <div class="goback">
-            <a href="http://jugaad.rocks:8000/">Go Back</a>
+            <a href="http://jugaad.rocks/">Go Back</a>
         </div>
     <% } %>
     <div>
@@ -112,7 +112,7 @@
             <table>
                 <thead>
                     <th>S. No.</th>
-                    <th>ShortID</th>
+                    <th>Short URL</th>
                     <th>Redirect</th>
                     <th>Clicks</th>
                 </thead>
@@ -120,7 +120,7 @@
                     <% urls.forEach((url, index) => { %>
                     <tr>
                         <td><%= index +1 %></td>
-                        <td><a href="<%= url.redirectURL %>" target="_blank"><%= url.shortId %></a></td>
+                        <td><a href="http://jugaad.rocks/url/<%= url.shortId %>" target="_blank">http://jugaad.rocks/url/<%= url.shortId %></a></td>
                         <td><%= url.redirectURL %></td>
                         <td><%= url.visitHistory.length %></td>
                     </tr>
